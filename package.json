@@ -2,18 +2,67 @@
   "name": "json-anonymizer",
   "displayName": "JSON Anonymizer",
   "description": "Anonymize sensitive data in JSON files while preserving structure",
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "publisher": "YOUR_PUBLISHER_NAME",
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.85.0"
   },
-  "categories": ["Formatters", "Other"],
-  "activationEvents": [],
+  "categories": [
+    "Formatters",
+    "Other"
+  ],
+  "keywords": [
+    "json",
+    "anonymize",
+    "privacy",
+    "data",
+    "sanitize",
+    "mask",
+    "obfuscate",
+    "gdpr",
+    "pii"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YOUR_USERNAME/vscode-json-anonymizer"
+  },
+  "bugs": {
+    "url": "https://github.com/YOUR_USERNAME/vscode-json-anonymizer/issues"
+  },
+  "activationEvents": [
+    "onLanguage:json",
+    "onCommand:json-anonymizer.anonymize",
+    "onCommand:json-anonymizer.anonymizeToNewFile",
+    "onCommand:json-anonymizer.anonymizeWithSeed",
+    "onCommand:json-anonymizer.anonymizeSelection"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "json-anonymizer.anonymize",
-        "title": "Anonymize JSON Data"
+        "title": "Anonymize JSON",
+        "category": "JSON",
+        "icon": "$(shield)"
+      },
+      {
+        "command": "json-anonymizer.anonymizeToNewFile",
+        "title": "Anonymize JSON to New File",
+        "category": "JSON",
+        "icon": "$(file-add)"
+      },
+      {
+        "command": "json-anonymizer.anonymizeWithSeed",
+        "title": "Anonymize JSON with Seed",
+        "category": "JSON",
+        "icon": "$(key)"
+      },
+      {
+        "command": "json-anonymizer.anonymizeSelection",
+        "title": "Anonymize Selected JSON",
+        "category": "JSON",
+        "icon": "$(selection)"
       }
     ],
     "menus": {
@@ -21,10 +70,94 @@
         {
           "when": "resourceExtname == .json",
           "command": "json-anonymizer.anonymize",
-          "group": "1_modification"
+          "group": "1_modification@1"
+        },
+        {
+          "when": "resourceExtname == .json",
+          "command": "json-anonymizer.anonymizeToNewFile",
+          "group": "1_modification@2"
+        },
+        {
+          "when": "resourceExtname == .json && editorHasSelection",
+          "command": "json-anonymizer.anonymizeSelection",
+          "group": "1_modification@3"
+        }
+      ],
+      "editor/title": [
+        {
+          "when": "resourceExtname == .json",
+          "command": "json-anonymizer.anonymize",
+          "group": "navigation@1"
+        },
+        {
+          "when": "resourceExtname == .json",
+          "command": "json-anonymizer.anonymizeToNewFile",
+          "group": "navigation@2"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "json-anonymizer.anonymize",
+          "when": "editorLangId == json"
+        },
+        {
+          "command": "json-anonymizer.anonymizeToNewFile",
+          "when": "editorLangId == json"
+        },
+        {
+          "command": "json-anonymizer.anonymizeWithSeed",
+          "when": "editorLangId == json"
+        },
+        {
+          "command": "json-anonymizer.anonymizeSelection",
+          "when": "editorLangId == json && editorHasSelection"
         }
       ]
-    }
+    },
+    "configuration": {
+      "title": "JSON Anonymizer",
+      "properties": {
+        "jsonAnonymizer.preserveTypes": {
+          "type": "boolean",
+          "default": true,
+          "description": "Preserve numeric types when anonymizing (numbers stay as numbers)"
+        },
+        "jsonAnonymizer.preserveKeys": {
+          "type": "boolean",
+          "default": true,
+          "description": "Keep object keys unchanged (only anonymize values)"
+        },
+        "jsonAnonymizer.preserveArrayLength": {
+          "type": "boolean",
+          "default": true,
+          "description": "Maintain original array lengths"
+        },
+        "jsonAnonymizer.defaultSeed": {
+          "type": ["number", "null"],
+          "default": null,
+          "description": "Default seed for reproducible anonymization (null for random)"
+        },
+        "jsonAnonymizer.createBackup": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically create a backup file before anonymizing"
+        }
+      }
+    },
+    "keybindings": [
+      {
+        "command": "json-anonymizer.anonymize",
+        "key": "shift+alt+a",
+        "mac": "shift+cmd+a",
+        "when": "editorTextFocus && editorLangId == json"
+      },
+      {
+        "command": "json-anonymizer.anonymizeSelection",
+        "key": "shift+alt+s",
+        "mac": "shift+cmd+s",
+        "when": "editorTextFocus && editorLangId == json && editorHasSelection"
+      }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run package",
@@ -34,21 +167,21 @@
     "compile-tests": "tsc -p . --outDir out",
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
-    "lint": "eslint src",
+    "lint": "eslint src --ext ts",
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.105.0",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "22.x",
-    "@typescript-eslint/eslint-plugin": "^8.45.0",
-    "@typescript-eslint/parser": "^8.45.0",
-    "eslint": "^9.36.0",
-    "typescript": "^5.9.3",
-    "ts-loader": "^9.5.4",
-    "webpack": "^5.102.0",
-    "webpack-cli": "^6.0.1",
-    "@vscode/test-cli": "^0.0.11",
-    "@vscode/test-electron": "^2.5.2"
+    "@types/vscode": "^1.85.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "ts-loader": "^9.5.1",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8"
   }
 }
