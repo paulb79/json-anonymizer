@@ -2,8 +2,8 @@
   "name": "json-anonymizer",
   "displayName": "JSON Anonymizer",
   "description": "Anonymize sensitive data in JSON files while preserving structure",
-  "version": "0.1.0",
-  "publisher": "YOUR_PUBLISHER_NAME",
+  "version": "0.2.0",
+  "publisher": "redjamjar",
   "icon": "icon.png",
   "engines": {
     "vscode": "^1.85.0"

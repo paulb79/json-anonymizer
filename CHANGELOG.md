@@ -2,7 +2,7 @@
 
 All notable changes to the "JSON Anonymizer" extension will be documented in this file.
 
-## [1.0.0] - 2025-01-27
+## [0.2.0] - 2025-01-27
 
 ### 🎉 Initial Release
 
@@ -42,7 +42,7 @@ All notable changes to the "JSON Anonymizer" extension will be documented in thi
 
 ---
 
-## [0.9.0-beta] - 2025-01-26
+## [0.1.0] - 2025-10-06
 
 ### Beta Release (Pre-release)
 
@@ -60,44 +60,27 @@ All notable changes to the "JSON Anonymizer" extension will be documented in thi
 
 ---
 
-## [0.1.0-alpha] - 2025-01-25
-
-### Alpha Release (Internal Testing)
-
-#### Added
-- Initial proof of concept
-- Basic string and number anonymization
-- Simple command registration
-
----
-
 ## Version History Summary
 
 | Version | Date | Status | Key Changes |
 |---------|------|---------|------------|
-| 1.0.0 | 2025-01-27 | Stable | Full feature release |
-| 0.9.0 | 2025-01-26 | Beta | Core functionality complete |
-| 0.1.0 | 2025-01-25 | Alpha | Initial prototype |
+| 0.2.0 | 2025-10-27 | Beta | Full feature release |
+| 0.1.0 | 2025-10-06 | Beta | Core functionality complete |
+| 0.0.1 | 2025-10-01 | Alpha | Initial prototype |
 
 ## Roadmap
 
-### [1.1.0] - Planned Q2 2025
+### [1.0.0] - Planned Q4 2025
 - [ ] Custom anonymization rules
 - [ ] Field-specific preservation patterns
 - [ ] Export/import anonymization profiles
 - [ ] Batch file processing
 
-### [1.2.0] - Planned Q3 2025
+### [1.1.0] - Planned Q1 2026
 - [ ] XML support
 - [ ] YAML support
 - [ ] CSV support
 - [ ] Performance improvements for 10MB+ files
-
-### [2.0.0] - Future
-- [ ] AI-powered smart anonymization
-- [ ] Team synchronization features
-- [ ] Cloud seed management
-- [ ] Advanced pattern recognition
 
 ---
 
