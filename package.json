@@ -25,10 +25,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/YOUR_USERNAME/vscode-json-anonymizer"
+    "url": "https://github.com/paulb79/json-anonymizer"
   },
   "bugs": {
-    "url": "https://github.com/YOUR_USERNAME/vscode-json-anonymizer/issues"
+    "url": "https://github.com/paulb79/json-anonymizer/issues"
   },
   "activationEvents": [
     "onLanguage:json",

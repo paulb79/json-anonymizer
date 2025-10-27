@@ -1,71 +1,234 @@
-# json-anonymizer README
+# JSON Anonymizer for Visual Studio Code
 
-This is the README for your extension "json-anonymizer". After writing up a brief description, we recommend including the following sections.
-
-## Features
-
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
-
-\!\[feature X\]\(images/feature-x.png\)
-
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
-
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
+<div align="center">
+  <img src="icon.png" width="128" height="128" alt="JSON Anonymizer Logo">
+  
+  **Instantly anonymize sensitive data in JSON files while preserving structure**
+  
+  [![Version](https://img.shields.io/visual-studio-marketplace/v/redjamjar.json-anonymizer)](https://marketplace.visualstudio.com/items?itemName=redjamjar.json-anonymizer)
+  [![Downloads](https://img.shields.io/visual-studio-marketplace/d/redjamjar.json-anonymizer)](https://marketplace.visualstudio.com/items?itemName=redjamjar.json-anonymizer)
+  [![Rating](https://img.shields.io/visual-studio-marketplace/r/redjamjar.json-anonymizer)](https://marketplace.visualstudio.com/items?itemName=redjamjar.json-anonymizer)
+  [![License](https://img.shields.io/github/license/paulb79/vscode-json-anonymizer)](https://github.com/paulb79/vscode-json-anonymizer/blob/main/LICENSE)
+</div>
 
 ---
 
-## Following extension guidelines
+## ✨ Features
 
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
+Transform sensitive JSON data into anonymized versions perfect for testing, sharing, or demonstrations - all while maintaining the exact structure and data types of your original files.
 
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
+### 🎯 Key Features
 
-## Working with Markdown
+- **🔒 Instant Anonymization** - One-click to anonymize any JSON file
+- **🎲 Reproducible Results** - Use seeds for consistent anonymization across teams
+- **📝 Selective Anonymization** - Anonymize only selected portions of your JSON
+- **💾 Safe Operations** - Create new files or backups to preserve originals
+- **⚡ Lightning Fast** - Pure TypeScript implementation with zero external dependencies
+- **🎨 Smart Preservation** - Maintains JSON structure, types, and array lengths
 
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
+## 📥 Installation
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
+### Method 1: VSCode Marketplace
+1. Open VSCode
+2. Press `Ctrl+P` / `Cmd+P`
+3. Type: `ext install redjamjar.json-anonymizer`
+4. Click Install
 
-## For more information
+### Method 2: Extension View
+1. Open Extensions view (`Ctrl+Shift+X` / `Cmd+Shift+X`)
+2. Search for "JSON Anonymizer"
+3. Click Install
 
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+## 🚀 Usage
 
-**Enjoy!**
+### Quick Start
+
+1. Open any `.json` file
+2. **Right-click** in the editor
+3. Select **"Anonymize JSON"**
+
+That's it! Your sensitive data is now anonymized.
+
+### Available Commands
+
+| Command | Description | Shortcut |
+|---------|-------------|----------|
+| **Anonymize JSON** | Replace current file with anonymized version | `Shift+Cmd+A` (Mac)<br>`Shift+Alt+A` (Win/Linux) |
+| **Anonymize JSON to New File** | Create a new file with anonymized content | Via context menu |
+| **Anonymize JSON with Seed** | Use a seed for reproducible anonymization | Via command palette |
+| **Anonymize Selected JSON** | Anonymize only the selected portion | `Shift+Cmd+S` (Mac)<br>`Shift+Alt+S` (Win/Linux) |
+
+### Access Methods
+
+- **Right-Click Menu** - Available on any JSON file
+- **Command Palette** - `Cmd+Shift+P` → Type "JSON Anonymizer"
+- **Status Bar** - Click the shield icon when editing JSON
+- **Keyboard Shortcuts** - Customizable in VSCode settings
+
+## 🎮 Examples
+
+### Before Anonymization
+```json
+{
+  "user": {
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "ssn": "123-45-6789",
+    "phone": "+1-555-0123"
+  },
+  "creditCard": {
+    "number": "4532-1234-5678-9012",
+    "expiry": "12/25",
+    "cvv": "123"
+  },
+  "transactions": [
+    {
+      "date": "2024-01-15",
+      "amount": 250.00,
+      "merchant": "Amazon"
+    }
+  ]
+}
+```
+
+### After Anonymization
+```json
+{
+  "user": {
+    "name": "K9xM L3Q",
+    "email": "b7xk.n5m2@ql9w8x.3rp",
+    "ssn": "847-92-3651",
+    "phone": "+5-219-7483"
+  },
+  "creditCard": {
+    "number": "9183-5672-4039-2847",
+    "expiry": "08/29",
+    "cvv": "582"
+  },
+  "transactions": [
+    {
+      "date": "3729-85-03",
+      "amount": 748.23,
+      "merchant": "Hy4K9m"
+    }
+  ]
+}
+```
+
+## ⚙️ Configuration
+
+Customize the extension behavior through VSCode settings:
+
+```json
+{
+  // Preserve numeric types (numbers stay as numbers)
+  "jsonAnonymizer.preserveTypes": true,
+  
+  // Keep object keys unchanged
+  "jsonAnonymizer.preserveKeys": true,
+  
+  // Maintain original array lengths
+  "jsonAnonymizer.preserveArrayLength": true,
+  
+  // Create backup before anonymizing
+  "jsonAnonymizer.createBackup": false,
+  
+  // Default seed for reproducible results (null for random)
+  "jsonAnonymizer.defaultSeed": null
+}
+```
+
+## 🔑 Reproducible Anonymization
+
+Need consistent anonymization across your team? Use the seed feature:
+
+1. `Cmd+Shift+P` → "JSON: Anonymize JSON with Seed"
+2. Enter a seed number (e.g., `12345`)
+3. Share the seed with your team
+4. Everyone gets identical anonymized results!
+
+Perfect for:
+- Creating consistent test data
+- Reproducible demos
+- Team collaboration
+- Debugging scenarios
+
+## 🎯 Use Cases
+
+- **🧪 Test Data Generation** - Create realistic test data from production samples
+- **📊 Safe Data Sharing** - Share data structures without exposing sensitive information
+- **🎓 Educational Demos** - Show JSON processing without privacy concerns
+- **🐛 Bug Reports** - Include data structures in bug reports without sensitive data
+- **📝 Documentation** - Create example JSON files for documentation
+- **🔐 GDPR Compliance** - Quickly anonymize personal data for compliance
+
+## 💡 Pro Tips
+
+### Selective Anonymization
+Only anonymize specific sensitive fields:
+1. Select the sensitive portion
+2. Right-click → "Anonymize Selected JSON"
+3. Only selected data is anonymized
+
+### Batch Processing
+Process multiple files quickly:
+1. Open each JSON file in tabs
+2. Use `Shift+Cmd+A` on each
+3. All files anonymized in seconds
+
+### Safe Testing
+Always test on copies first:
+- Use "Anonymize to New File" for safety
+- Enable "Create Backup" in settings
+- Review changes before saving
+
+## 🛡️ Privacy & Security
+
+- **No Data Collection** - All processing happens locally
+- **No Network Requests** - Completely offline operation
+- **No External Dependencies** - Pure TypeScript implementation
+- **Open Source** - Inspect the code yourself
+
+## 📋 Requirements
+
+- Visual Studio Code v1.85.0 or higher
+- Works on Windows, macOS, and Linux
+
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🐛 Known Issues
+
+- Large files (>10MB) may take a moment to process
+- Complex nested structures with 10+ levels may impact performance
+
+## 📮 Support
+
+- **Issues**: [GitHub Issues](https://github.com/paulb79/json-anonymizer/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/paulb79/json-anonymizer/discussions)
+- **Email**: support@redjamjar.net
+
+## 🎉 Acknowledgments
+
+- Thanks to all contributors and users
+- Inspired by the need for better data privacy tools
+- Built with TypeScript and the VSCode Extension API
+
+---
+
+<div align="center">
+  Made with ❤️ for the developer community
+  
+  **[Install Now](https://marketplace.visualstudio.com/items?itemName=redjamjar.json-anonymizer)** | **[GitHub](https://github.com/paulb79/json-anonymizer)** | **[Report Issue](https://github.com/paulb79/json-anonymizer/issues)**
+</div>

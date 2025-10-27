@@ -1,14 +1,109 @@
+# .vscodeignore - Files to exclude from extension package
+
+# Development files
 .vscode/**
 .vscode-test/**
-out/**
-node_modules/**
 src/**
 .gitignore
 .yarnrc
-webpack.config.js
 vsc-extension-quickstart.md
 **/tsconfig.json
-**/eslint.config.mjs
+**/webpack.config.js
+**/.eslintrc.json
 **/*.map
+.github/**
+
+# Source files (TypeScript)
 **/*.ts
-**/.vscode-test.*
+!**/*.d.ts
+
+# Test files
+**/*.test.ts
+**/*.spec.ts
+test/**
+out/test/**
+
+# Documentation source files (keep compiled README)
+docs/**
+images/source/**
+*.sketch
+*.fig
+*.psd
+
+# Build and dependency files
+node_modules/**
+.npm/**
+.yarn/**
+package-lock.json
+yarn.lock
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+*.swp
+*.swo
+*~
+.idea/**
+*.iml
+.project
+.classpath
+.c9/
+*.launch
+.settings/**
+*.sublime-workspace
+
+# Git files
+.git/**
+.gitattributes
+
+# CI/CD
+.travis.yml
+.gitlab-ci.yml
+azure-pipelines.yml
+.circleci/**
+
+# Development scripts
+scripts/**
+*.sh
+!stage*.sh
+
+# Backup files
+*.bak
+*.backup
+*_backup_*
+
+# Temporary files
+*.tmp
+*.temp
+tmp/**
+temp/**
+
+# Log files
+*.log
+logs/**
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage files
+coverage/**
+.nyc_output/**
+
+# Build artifacts (keep dist)
+out/**
+!dist/**
+
+# Keep these files
+!README.md
+!CHANGELOG.md
+!LICENSE
+!icon.png
+!package.json
+!package.nls.json
