@@ -26,6 +26,11 @@ Transform sensitive JSON data into anonymized versions perfect for testing, shar
 - **⚡ Lightning Fast** - Pure TypeScript implementation with zero external dependencies
 - **🎨 Smart Preservation** - Maintains JSON structure, types, and array lengths
 
+
+## Demo
+
+![Example JSON Anonymization](/assets/demo.gif "Demo of Json Anonymizer")
+
 ## 📥 Installation
 
 ### Method 1: VSCode Marketplace

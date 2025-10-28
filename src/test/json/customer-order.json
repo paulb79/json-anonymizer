@@ -1,0 +1,60 @@
+{
+  "orderId": "ORD-2024-001234",
+  "customerId": "cust_789012",
+  "status": "shipped",
+  "orderDate": "2024-01-10T09:30:00Z",
+  "items": [
+    {
+      "productId": "prod_12345",
+      "name": "Wireless Bluetooth Headphones",
+      "price": 199.99,
+      "quantity": 1,
+      "subtotal": 199.99
+    }
+  ],
+  "payment": {
+    "method": "credit_card",
+    "cardLast4": "1234",
+    "transactionId": "txn_abc123def456",
+    "status": "completed",
+    "amount": 229.98
+  },
+  "shipping": {
+    "method": "standard",
+    "cost": 9.99,
+    "trackingNumber": "1Z999AA1234567890",
+    "estimatedDelivery": "2024-01-18T17:00:00Z",
+    "address": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "street": "123 Main St",
+      "city": "New York",
+      "state": "NY",
+      "zipCode": "10001",
+      "country": "USA"
+    }
+  },
+  "totals": {
+    "subtotal": 199.99,
+    "tax": 20,
+    "shipping": 9.99,
+    "total": 229.98
+  },
+  "timeline": [
+    {
+      "status": "placed",
+      "timestamp": "2024-01-10T09:30:00Z",
+      "description": "Order placed successfully"
+    },
+    {
+      "status": "confirmed",
+      "timestamp": "2024-01-10T10:15:00Z",
+      "description": "Order confirmed and processing"
+    },
+    {
+      "status": "shipped",
+      "timestamp": "2024-01-12T14:20:00Z",
+      "description": "Order shipped via UPS"
+    }
+  ]
+}
