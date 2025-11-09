@@ -5,17 +5,17 @@
   
   **Instantly anonymize sensitive data in JSON files while preserving structure**
   
-  [![Version](https://img.shields.io/visual-studio-marketplace/v/redjamjar.json-anonymizer)](https://marketplace.visualstudio.com/items?itemName=redjamjar.json-anonymizer)
-  [![Downloads](https://img.shields.io/visual-studio-marketplace/d/redjamjar.json-anonymizer)](https://marketplace.visualstudio.com/items?itemName=redjamjar.json-anonymizer)
-  [![Rating](https://img.shields.io/visual-studio-marketplace/r/redjamjar.json-anonymizer)](https://marketplace.visualstudio.com/items?itemName=redjamjar.json-anonymizer)
-  [![License](https://img.shields.io/github/license/paulb79/vscode-json-anonymizer)](https://github.com/paulb79/vscode-json-anonymizer/blob/main/LICENSE)
+  [![Version](https://img.shields.io/visual-studio-marketplace/v/Redjamjar.json-anonymizer)](https://marketplace.visualstudio.com/items?itemName=Redjamjar.json-anonymizer)
+  [![Downloads](https://img.shields.io/visual-studio-marketplace/d/Redjamjar.json-anonymizer)](https://marketplace.visualstudio.com/items?itemName=Redjamjar.json-anonymizer)
+  [![Rating](https://img.shields.io/visual-studio-marketplace/r/Redjamjar.json-anonymizer)](https://marketplace.visualstudio.com/items?itemName=Redjamjar.json-anonymizer)
+  [![License](https://img.shields.io/github/license/paulb79/json-anonymizer)](https://github.com/paulb79/json-anonymizer/blob/master/LICENSE)
 </div>
 
 ---
 
 ## ✨ Features
 
-Transform sensitive JSON data into anonymized versions perfect for testing, sharing, or demonstrations - all while maintaining the exact structure and data types of your original files.
+Transform sensitive JSON data into anonymized versions for testing, sharing, or demonstrations - all while maintaining the exact structure and data types of your original files.
 
 ### 🎯 Key Features
 
