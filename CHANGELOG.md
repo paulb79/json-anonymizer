@@ -2,7 +2,17 @@
 
 All notable changes to the "JSON Anonymizer" extension will be documented in this file.
 
-## [0.2.0] - 2025-01-27
+## [0.4.0] - 2025-11-09
+
+###
+- ** Docs
+  - Clean up of docs, fix broken links
+  - Add security, contributing and maintenance guides
+  - Improve packaging scripts to optimise extension size
+
+--- 
+
+## [0.3.0] - 2025-10-28
 
 ### 🎉 Initial Release
 

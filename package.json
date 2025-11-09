@@ -2,7 +2,7 @@
   "name": "json-anonymizer",
   "displayName": "JSON Anonymizer",
   "description": "Anonymize sensitive data in JSON files while preserving structure",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "publisher": "redjamjar",
   "icon": "icon.png",
   "engines": {
@@ -167,7 +167,7 @@
     "compile-tests": "tsc -p . --outDir out",
     "watch-tests": "tsc -p . -w --outDir out",
     "pretest": "npm run compile-tests && npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
+    "lint": "eslint src ",
     "test": "vscode-test"
   },
   "devDependencies": {

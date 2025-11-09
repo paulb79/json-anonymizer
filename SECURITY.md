@@ -122,7 +122,7 @@ Thanks to the following security researchers:
 ---
 
 **Last Updated**: January 2025  
-**Next Review**: April 2025
+**Next Review**: April 2026
 
 ## Disclaimer
 
