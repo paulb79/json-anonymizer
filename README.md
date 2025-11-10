@@ -222,7 +222,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Issues**: [GitHub Issues](https://github.com/paulb79/json-anonymizer/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/paulb79/json-anonymizer/discussions)
-- **Email**: support@redjamjar.net
 
 ## 🎉 Acknowledgments
 
